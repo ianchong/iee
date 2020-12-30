@@ -31,9 +31,11 @@
         <div class="right-side">
           <p class="nav-option">Organizers</p>
           <p class="nav-option">Schedule</p>
+          <!--
           <p class="nav-option">Speakers</p>
+          -->
           <p class="nav-option">Contact Us</p>
-          <button style="font-size: calc(18 + 1.5vmin); background-color: #ef3054; color: #fff; border-radius:10%; text-align: center;"><a href="https://ust.az1.qualtrics.com/jfe/form/SV_6EutIG1FOGfE7ml">Join Now!</a></button>
+          <button><a style="color: white;" href="https://ust.az1.qualtrics.com/jfe/form/SV_6EutIG1FOGfE7ml">Join Now!</a></button>
         </div>
       </div>
     </div>
@@ -127,11 +129,11 @@
 
     <!-- Tab links -->
     <div class="tab" id="schedule">
-      <button id="iplpbutton" class="tablinks" onclick="openTab(event, 'iplp')">
+      <button id="iplpbutton" class="tablinks" onclick="openTab(event, 'iplp'); toggleSpeakers(0)">
         <h2>Intercultural Peer Learning Program 2021</h2>
         <p>4 Jan &ndash; 7 Jan 2021</p>
       </button>
-      <button id="ieebutton" class="tablinks" onclick="openTab(event, 'iee')">
+      <button id="ieebutton" class="tablinks" onclick="openTab(event, 'iee'); toggleSpeakers(1)">
         <h2>International Symposium on Engineering Education</h2>
         <p>7 Jan 2021</p>
       </button>
@@ -358,15 +360,15 @@
             </tr>
             <tr>
               <td>0910</td>
-              <td>Keynote Speech by <b>Prof. Karl Smith</b></td>
+              <td>Keynote: Learning in the Time of Coronavirus<br><em>Prof. Karl SMITH</em></td>
             </tr>
             <tr>
               <td>1000</td>
-              <td>Session A by <b>Prof. Gloria KIM</b></td>
+              <td>Long-term and Sustainable Engineering Education Reform<br><em>Prof. Gloria KIM</em></td>
             </tr>
             <tr>
               <td>1030</td>
-              <td>Session B by <b>Prof. Chi Ying TSUI</b></td>
+              <td>Integrative Systems and Design &ndash; A New Approach to Nurture Next-Generation Technologists and Innovators<br><em>Prof. Chi Ying TSUI</em></td>
             </tr>
             <tr>
               <td>1100</td>
@@ -374,11 +376,11 @@
             </tr>
             <tr>
               <td>1120</td>
-              <td>Session C by <b>Prof. Ben CHAN</b></td>
+              <td>Makers and Where to Find Them<br><em>Prof. Ben CHAN</em></td>
             </tr>
             <tr>
               <td>1150</td>
-              <td>Session D by <b>Prof. Sang Hoon BAE</b></td>
+              <td>The Rise of Student Engagement and Success: A New Paradigm of Higher Education in Korea<br><em>Prof. Sang Hoon BAE</em></td>
             </tr>
             <tr>
               <td>1220</td>
@@ -390,30 +392,7 @@
       </div>
     </div>
 
-    <script>
-      function openTab(evt, name) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
 
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(name).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-      //default open iplp
-      document.getElementById("iplpbutton").click();
-    </script>
 
     <div class="block-3 block-3-gradient" id="speakers">
       <div>
@@ -463,6 +442,39 @@
         </div>
       </div>
     </div>
+        <script>
+      function openTab(evt, name) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(name).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      
+      function toggleSpeakers(num) {
+        if(num==0){
+          document.getElementById("speakers").classList.add("hide");
+        } else if (num==1){
+          document.getElementById("speakers").classList.remove("hide");
+        }
+      }
+      
+      //default open iplp
+      document.getElementById("iplpbutton").click();
+    </script>
     <script>
       function activeIMG(num) {
         switch(num){

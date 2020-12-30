@@ -130,10 +130,38 @@ img.icon-logo {
   margin: 0;
   cursor: pointer;
 }
+.sticky-header button {
+    font-size: 20px;
+    margin: 0;
+    cursor: pointer;
+    background-color: #ef3054;
+    color: white;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+}
+.sticky-header a:link {
+    text-decoration: none;
+    color: white;
+}
+.sticky-header a:visited {
+    text-decoration: none;
+    color: white;
+}
+.sticky-header a:hover {
+    text-decoration: underline;
+    color: #1e1b18;
+}
+.sticky-header a:active {
+    text-decoration: underline;
+    color: #1e1b18;
+}
 @media only screen and (max-width: 600px) {
   .sticky-header { padding: 12px 0;}
   .sticky-header p { font-size: 10px; }
+  .sticky-header button { font-size: 12px; }
 }
+
 /*
 .sticky-header button.buy {
   background-color: #2189db;
@@ -316,13 +344,11 @@ img.icon-logo {
   text-align: center;
   padding-top: 20px;
   width: 100%;
-  padding: 100px 0;
+  padding: 5px 0;
+  //padding: 100px 0;
   min-height: 600px;
-  background: #fbf6f5; /* Old browsers */
-  background: -moz-linear-gradient(top,  #fbf6f5 0%, #fdf0ed 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #fbf6f5 0%,#fdf0ed 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #fbf6f5 0%,#fdf0ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf6f5', endColorstr='#fdf0ed',GradientType=0 ); /* IE6-9 */
+  background: #f7f7f7; /* Old browsers */
+  margin-top: 0px;
   //border: 1px solid black;
 }
 .block-3 h4 {
@@ -475,6 +501,9 @@ img.icon-logo {
     left: 0;
   }
 }
+.hide {
+    display: none;
+}
 
 /* TABS */
 /* Style the tab */
@@ -543,7 +572,7 @@ img.icon-logo {
 .tabcontent {
   display: none;
   //padding: 6px 12px;
-  border: 1px solid #ccc;
+  //border: 1px solid #ccc;
   border-top: none;
 }
 
@@ -600,7 +629,7 @@ img.icon-logo {
 }
 .block-4 .rundown {
   margin: 0 auto;
-  width: 60vw;
+  width: 75vw;
   text-align: left;
 }
 .block-4 table, tr, td {
@@ -608,10 +637,10 @@ img.icon-logo {
   font-size: calc(12px + 0.5vmin);
 }
 .block-4 td {
-  height: calc(12px + 2vh);
+  height: calc(20px + 3vh);
 }
 .block-4 table {
-  margin: 0.1vmin  auto 0.1vmin;
+  margin: 5vmin  auto 5vmin;
   width: 100%;
   table-layout: fixed;
   overflow: hidden;
@@ -637,6 +666,7 @@ img.icon-logo {
     width: 100%;
   }
 }
+
 
 /* block-5 */
 .block-5  {

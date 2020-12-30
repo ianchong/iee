@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>IPLP Web</title>
+    <title>International Symposium on Engineering Education | Intercultural Peer Learning Program</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,206 +26,114 @@
       <div class="container-default"/>
         <div class="left-side">
           <!-- EMPTY LEFT SIDE -->
+          <p onclick="toTop()">IEE &amp; IPLP2021</p>
         </div>
         <div class="right-side">
           <p class="nav-option">Organizers</p>
-          <p class="nav-option">Speakers</p>
           <p class="nav-option">Schedule</p>
+          <p class="nav-option">Speakers</p>
           <p class="nav-option">Contact Us</p>
+          <button style="font-size: calc(18 + 1.5vmin); background-color: #ef3054; color: #fff; border-radius:10%; text-align: center;"><a href="https://ust.az1.qualtrics.com/jfe/form/SV_6EutIG1FOGfE7ml">Join Now!</a></button>
         </div>
       </div>
     </div>
+      <script>
+        function toTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      </script>
 
     <div class="block-1">
-      <div class="parallax" style="background-image: url('img/01parallax.jpg');">
-        <div class=parallax-spacer></div>
+      <!-- div class="parallax" style="background-image: url('img/title01.jpg');" -->
+      <div class="parallax">
+        <img id="titleIMG" src="img/title03.jpg" style="width: 100%; height:auto;" onclick="toSchedule(event,this)">
+        <!--
         <div class="parallax-text">
           <h1>Intercultural Peer Learning Program</h1>
           <h3><i>cum</i></h3>
           <h1>Design Fair</h1>
           <h2>HKUST E2I x SKKU CIEE</h2>
           <h3>4 - 7 Jan 2021</h3>
+        </div>
+        -->
+      </div>
+      <div class="intro" style="background-color: #efefdd;">
+        <div class="intro-text" style="text-align: justified;">
           <div class="parallax-text-spacer"></div>
-          <p></p>
+          <p>For many years, both HKUST and SKKU have researched and developed innovative ways of tackling the challenge of providing effective and high-quality engineering education to meet the future demands of the world. In this symposium, experts have been invited to provide their insight on the future of engineering education, and how both proven and innovative teaching methods can provide for a more effective learning experience for students.</p>
+          <div style="height: 3vh;"></div>
+          <p>At the conclusion of the symposium, students participating in the HKUST x SKKU Intercultural Peer Learning Program (IPLP) 2021 will present design solutions to challenges imposed by the COVID-19 pandemic on their university learning experience. Students from Hong Kong and Korea will team up and take advantage of 3D modelling software to illustrate their designs.</p>
+          <div style="height: 3vh;"></div>
+          <p>To join this event, sign up <a href="https://ust.az1.qualtrics.com/jfe/form/SV_6EutIG1FOGfE7ml">here</a>.</p>
+          <!--
+          <img src="img/rsvpQR.png" style="width: 40vmin; margin: 0 auto;">
+          -->
           <div class="parallax-text-spacer"></div>
         </div>
-	  </div>
-		<div class="intro" style="background-color: #efefdd;">
-		  <div class="intro-text">
-		    <div class="parallax-text-spacer"></div>
-            <p>A mixed-mode intensive 4-day workshop to inspire students' innovativeness to solve real-world problems and cultivate intercultural competencies.</p>
-            <div class="parallax-text-spacer"></div>
-            <p>An international symposium to share findings and good practices amongst scholars and practitioners in promoting and enhancing innovation at the university level.</p>
-            <div class="parallax-text-spacer"></div>
-		  </div>
-		</div>
+      </div>
     </div>
 
+    <script>
+      function toSchedule(event, img){
+        var cursorX = event.pageX - img.offsetLeft;
+        var cursorY = event.pageY - img.offsetTop;
+        var lineY = (-img.clientHeight / img.clientWidth) * cursorX + img.clientHeight;
+        if (cursorY <= lineY){
+          console.log("X: " + cursorX + " lineY: " + lineY);
+          document.getElementById("ieebutton").click();
+        } else{
+          console.log("X: " + cursorX + " lineY: " + lineY);
+          document.getElementById("iplpbutton").click();
+        }
+        var target = document.getElementById("schedule").getBoundingClientRect().top - 42;
+        window.scrollTo( {top: target, behavior: 'smooth' })
+      }
+    </script>
 
 
     <div class="block-2 block-2-gradient" id="organizers">
       <div class="container-default">
-      <h1>Organizers</h1>
+        <h1>Organizers</h1>
         <div class="text-spacer"></div>
       </div>
       <div class="logo-container">
-		<img class="logo" src="img/organizers.svg"/>
-		<!--
-        <img class="logo" src="img/e2i.svg"/>
-        <img class="logo" src="img/CIEE_logo.svg"/>
-		<img class="logo" src="img/KCIHE_logo.svg"/>
-		-->
+        <img class="logo" src="img/organizers.svg"/>
+        <!--
+          <img class="logo" src="img/e2i.svg"/>
+          <img class="logo" src="img/CIEE_logo.svg"/>
+          <img class="logo" src="img/KCIHE_logo.svg"/>
+        -->
       </div>
     </div>
 
-	<!-- NO SPONSORS SECTION
-    <div class="block-7" id="sponsors">
+    <!-- NO SPONSORS SECTION
+      <div class="block-7" id="sponsors">
       <div class="spacer"></div>
       <div class="grid-container">
-        <div class="grid-left">
-          <h1>Sponsors</h1>
-        </div>
-        <div class="grid-right">
-          <div class="logo-container">
-            <img class="logo" src="img/UST_L4.svg" />
-            <img class="logo" src="img/SKKU.jpg" />
-          </div>
-        </div>
+      <div class="grid-left">
+      <h1>Sponsors</h1>
+      </div>
+      <div class="grid-right">
+      <div class="logo-container">
+      <img class="logo" src="img/UST_L4.svg" />
+      <img class="logo" src="img/SKKU.jpg" />
+      </div>
+      </div>
       </div>
       <div class="spacer"></div>
-    </div>
-	-->
-
-    <div class="block-3 block-3-gradient" id="speakers">
-      <div>
-        <h1>Speakers</h1>
       </div>
-      <div>
-		<!-- grow
-        <div class="growContainer">
-          <div class="grow">
-            <img src="img/jac.jpg">
-            <h4>Jac</h4>
-            <p>Keynote Speaker</p>
-            <div class="showOver">
-              <p style="padding-top: 3%;">Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. </p>
-            </div>
-          </div>
-          <div class="grow">
-            <img src="img/jac.jpg">
-            <h4>Jac</h4>
-            <p>Guest Speaker</p>
-            <div class="showOver">
-              <p style="padding-top: 3%;">Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. </p>
-            </div>
-          </div>
-          <div class="grow">
-            <img src="img/jac.jpg">
-            <h4>Jac</h4>
-            <p>Guest Speaker</p>
-            <div class="showOver">
-              <p style="padding-top: 3%;">Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. </p>
-            </div>
-          </div>
-          <div class="grow">
-            <img src="img/jac.jpg">
-            <h4>Jac</h4>
-            <p>Guest Speaker</p>
-            <div class="showOver">
-              <p style="padding-top: 3%;">Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. </p>
-            </div>
-          </div>
-          <div class="grow">
-            <img src="img/jac.jpg">
-            <h4>Jac</h4>
-            <p>Guest Speaker</p>
-            <div class="showOver">
-              <p style="padding-top: 3%;">Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. Some brief bio here. </p>
-            </div>
-          </div>
-        </div>
-		-->
-		<div class="pic-row">
-			<div class="speaker-img">
-				<img src="img/KarlSmith.jpg" onclick="speaker1()"/>
-				<b>Prof. Karl SMITH</b>
-				<p>Keynote Speaker</p>
-			</div>
-			<div class="speaker-img">
-				<img src="img/BenChan.png" onclick="speaker2()"/>
-				<b>Prof. Ben CHAN</b>
-				<p>Session A</p>
-			</div>
-			<div class="speaker-img">
-				<img src="img/ChiYingTsui.jpg" onclick="speaker3()"/>
-				<b>Prof. Chi Ying TSUI</b>
-				<p>Session B</p>
-			</div>
-			<div class="speaker-img">
-                 <img src="img/SangHoonBae.jpg" onclick="speaker4()"/>
-                <b>Prof. Sang Hoon BAE</b>
-			    <p>Session C</p>
-			</div>
-			<div class="speaker-img">
-				<img src="img/GloriaKim2.jpg" onclick="speaker5()"/>
-				<b>Prof. Gloria KIM</b>
-				<p>Session D</p>
-			</div>
-		</div>
-		<div style="height: 5vh;"></div>
-		<div class="bio">
-			<h2 id="speechTitle">Learning in the Time of Coronavirus</h2>
-			<h3>Abstract</h3>
-			<p id="abstract">Five major shifts in the past 100 years of engineering education were identified in the 2012 Centennial Special Issue of the Proceedings of the IEEE. They are summarized and lessons learned and implications for the current shift, the shift to remote instruction are described. This keynote focuses of what we have learned from previous shifts, especially Shift 5:  applying education, learning, and social-behavioral sciences research; and the implications for advancing learning during the pandemic. Three key areas are emphasized, (1) what we know about how people learn and (2) the importance of intentional course design, and (3) the importance of interactive learning. The speaker has been active in engineering education research since the early 1970s and played a major role in the development of the first engineering education PhD granting department. </p>
-			<div style="height:5vh;"></div>
-			<h3 id="bio-title">About Prof. Karl SMITH</h3>
-			<p id="bio-text">Karl A. Smith is Cooperative Learning Professor of Engineering Education, School of Engineering Education, at Purdue University. He is also Emeritus Professor of Civil, Environmental, and Geo- Engineering, Morse-Alumni Distinguished University Teaching Professor, and Faculty Member, Technological Leadership Institute at the University of Minnesota. He has been at the University of Minnesota since 1972 and started his academic career as a materials processing engineering researcher. In 1991 he changed careers to focus on engineering education research and in 2006 he accepted a part time position as Cooperative Learning Professor, School of Engineering Education, Purdue University to help start the engineering education PhD program in the College of Engineering.</p>
-		</div>
-      </div>
-    </div>
-	<script>
-	function speaker1(){
-		document.getElementById("speechTitle").innerHTML="Learning in the Time of Coronavirus";
-		document.getElementById("abstract").innerHTML="Five major shifts in the past 100 years of engineering education were identified in the 2012 Centennial Special Issue of the Proceedings of the IEEE. They are summarized and lessons learned and implications for the current shift, the shift to remote instruction are described. This keynote focuses of what we have learned from previous shifts, especially Shift 5:  applying education, learning, and social-behavioral sciences research; and the implications for advancing learning during the pandemic. Three key areas are emphasized, (1) what we know about how people learn and (2) the importance of intentional course design, and (3) the importance of interactive learning. The speaker has been active in engineering education research since the early 1970s and played a major role in the development of the first engineering education PhD granting department. ";
-		document.getElementById("bio-title").innerHTML="About Prof. Karl SMITH";
-		document.getElementById("bio-text").innerHTML="Karl A. Smith is Cooperative Learning Professor of Engineering Education, School of Engineering Education, at Purdue University. He is also Emeritus Professor of Civil, Environmental, and Geo- Engineering, Morse-Alumni Distinguished University Teaching Professor, and Faculty Member, Technological Leadership Institute at the University of Minnesota. He has been at the University of Minnesota since 1972 and started his academic career as a materials processing engineering researcher. In 1991 he changed careers to focus on engineering education research and in 2006 he accepted a part time position as Cooperative Learning Professor, School of Engineering Education, Purdue University to help start the engineering education PhD program in the College of Engineering.";
-	}
-	function speaker2(){
-		document.getElementById("speechTitle").innerHTML="Speech Title: TBC";
-		document.getElementById("abstract").innerHTML="";
-		document.getElementById("bio-title").innerHTML="About Prof. Ben CHAN";
-		document.getElementById("bio-text").innerHTML="TBC";
-	}
-	function speaker3(){
-		document.getElementById("speechTitle").innerHTML="Speech Title: TBC";
-		document.getElementById("abstract").innerHTML="";
-		document.getElementById("bio-title").innerHTML="About Prof. Chi Ying TSUI";
-		document.getElementById("bio-text").innerHTML="TBC";
-	}
-	function speaker4(){
-		document.getElementById("speechTitle").innerHTML="The Rise of Student Engagement and Success: A New Paradigm of Higher Education in Korea";
-		document.getElementById("abstract").innerHTML="In the past decade, Korea’s higher education has experienced a huge paradigm shift owing to dramatic environmental changes. The new trend adopts student-oriented education, student engagement, and student success as major themes. These terms are widely used in the official reports and statements from higher education institutions and the government. The most frequently cited concept is “student-oriented” education. It is perceived as the vison which universities and colleges must pursue for their sustainable development. In other words, universities and colleges should work toward satisfying the needs of students, helping them fulfil their academic and career goals, and ultimately helping them grow up as better human being. In recent years, the term “student engagement” was introduced to actualize the theme of “student-oriented” which may be viewed solely as abstract and directional. While “student-oriented” suggests the ideal that institutions should strive for, “student engagement” involves the intervention strategies that are prescribed for developing systems and practices aimed at building student-oriented institutions. Finally, “student success” as a theme is surprisingly flourishing among Korean universities and colleges which have made it their fundamental mission to be accountable for the students’ learning outcomes and success in future life. Moreover, student engagement is highlighted as an effective strategy to achieve student success.<br>Professor Bae presents a case of Sungkyunkwan University, which officially proposed student engagement and success as a vison of the institution. Currently the SKKU student success system is widely considered a successful and exemplary case of university innovation in Korea. He will present what SKKU has done to promote student engagement and succuss and share lessons from SKKU case.";
-		document.getElementById("bio-title").innerHTML="About Prof. Sang Hoon BAE";
-		document.getElementById("bio-text").innerHTML="Sang Hoon Bae is Professor at the Department of Education and Vice President for student affairs in the Sungkyunkwan University (SKKU). Before joining in the faculty, he served as Assistant Secretary to the President for Education in the Office of the President. Professor Bae also has sixteen-year experience in the Korean Ministry of Education. He has held positions in various parts of the Ministry, including Director in the International Cooperation Team and in the After-school Policy Planning Team. He completed both Ph. D. and MS degree in Workforce Education and Development (WFED) from the Pennsylvania State University (PSU) in 2006 and 2004, respectively and earned a BA in Ethics Education from the Seoul National University in Korea. His current research interests focus on education reform policy, student success in higher education, and human resources development (HRD) at the national level. His recent publications appear in many internationally recognized journals including Asia Pacific Education Review and Quality Assurance in Education.";
-	}
-	function speaker5(){
-		document.getElementById("speechTitle").innerHTML="Speech Title: TBC";
-		document.getElementById("abstract").innerHTML="";
-		document.getElementById("bio-title").innerHTML="About Prof. Gloria KIM";
-		document.getElementById("bio-text").innerHTML="Dr. Gloria Kim received her B.S. degree in Chemistry from Seoul National University, M.S. degree in Biomedical Engineering from Johns Hopkins University, and Ph.D. degree in Biomedical Engineering from Georgia Institute of Technology. Her technical expertise is in biomaterials, molecular imaging and drug delivery. <br>As a faculty member at the University at Buffalo, Northwestern University, and University of Florida, she has taught and developed courses in circuits, biomechanics, biomaterials, bioinstrumentation, and nanotechnology. She is interested in how educational environments affect student learning; and social and ethical issues in STEM research and teaching. Her work includes creating opportunities for students to globalize their engineering degrees and mentoring students in teaching. In addition, Dr. Kim has mentored numerous student entrepreneurial teams to success.<br>Currently, she is the Associate Chair for Research of the Department of Engineering Education in the Herbert Wertheim College of Engineering at the University of Florida. She is a member of the American Society for Engineering Education (ASEE) and the Korean Society for Engineering Education (KSEE). Recently, she was elected to serve on the Executive Committee of the International Federation of Engineering Education Societies (IFEES).";
-	}
-	</script>
+    -->
 
 
     <!-- Tab links -->
     <div class="tab" id="schedule">
       <button id="iplpbutton" class="tablinks" onclick="openTab(event, 'iplp')">
-        <h1>Intercultural Peer Learning Program 2021</h1>
-        <h4>4 Jan &ndash; 7 Jan 2020</h4 >
+        <h2>Intercultural Peer Learning Program 2021</h2>
+        <p>4 Jan &ndash; 7 Jan 2021</p>
       </button>
       <button id="ieebutton" class="tablinks" onclick="openTab(event, 'iee')">
-        <h1>International Symposium on Engineering Education</h1>
-        <h4>7 Jan 2020</h4 >
+        <h2>International Symposium on Engineering Education</h2>
+        <p>7 Jan 2021</p>
       </button>
     </div>
 
@@ -233,47 +141,46 @@
     <div id="iplp" class="tabcontent">
       <div class="block-4 block-4-gradient-iplp" id="iplpschedule">
         <!--
-        <div class="container-default">
+          <div class="container-default">
           <div>
-            <h1>Intercultural Peer Learning Program 2021</h1>
-            <div style="height: 5%;"></div>
-            <h1>Program Schedule</h1>
+          <h1>Intercultural Peer Learning Program 2021</h1>
+          <div style="height: 5%;"></div>
+          <h1>Program Schedule</h1>
           </div>
-        </div>
+          </div>
         -->
-  
+
         <div class="rundown">
-		<!-- NO DAY 0
-          <div class="table-head">
+          <!-- NO DAY 0
+            <div class="table-head">
             <h2>Day 0: 3 Jan 2021</h2>
             <h3>Welcoming and Reception</h3>
-          </div>
-          <table>
+            </div>
+            <table>
             <col width="20%" />
             <col width="80%" />
             <tr>
-              <th>Time</th>
-              <th>Event</th>
+            <th>Time</th>
+            <th>Event</th>
             </tr>
             <tr>
-              <td>1700</td>
-              <td>Welcoming</td>
+            <td>1700</td>
+            <td>Welcoming</td>
             </tr>
             <tr>
-              <td>1800</td>
-              <td>Pre-workshop Dinner</td>
+            <td>1800</td>
+            <td>Pre-workshop Dinner</td>
             </tr>
-          </table>
-		  -->
-  
+            </table>
+          -->
+
           <div class="table-head">
-            <div style="height: 5%;"></div>
-            <h2>Day 1: 4 Jan 2021</h2>
-            <h3>Workshop: Design Thinking</h3>
+            <h3>Day 1: 4 Jan 2021</h3>
+            <h3>Design Thinking</h3>
           </div>
           <table>
-            <col width="20%" />
-            <col width="80%" />
+            <col width="30%" />
+            <col width="70%" />
             <tr>
               <th>Time</th>
               <th>Event</th>
@@ -296,7 +203,7 @@
             </tr>
             <tr>
               <td>1200</td>
-              <td>Team Lunch: Explore Chinese Cuisine</td>
+              <td>Explore Chinese Cuisine</td>
             </tr>
             <tr>
               <td>1400</td>
@@ -315,15 +222,15 @@
               <td>Room Escape &ndash; Online Version</td>
             </tr>
           </table>
-  
+
           <div class="table-head">
-            <div style="height: 5%;"></div>
-            <h2>Day 2: 5 Jan 2021</h2>
+            <div style="height: 1vh;"></div>
+            <h3>Day 2: 5 Jan 2021</h3>
             <h3>The 3D World</h3>
           </div>
           <table>
-            <col width="20%" />
-            <col width="80%" />
+            <col width="30%" />
+            <col width="70%" />
             <tr>
               <th>Time</th>
               <th>Event</th>
@@ -361,15 +268,15 @@
               <td>Intercultural Night</td>
             </tr>
           </table>
-  
+
           <div class="table-head">
-            <div style="height: 5%;"></div>
-            <h2>Day 3: 6 Jan 2021</h2>
+            <div style="height: 1vh;"></div>
+            <h3>Day 3: 6 Jan 2021</h3>
             <h3>Design Project Consultation</h3>
           </div>
           <table>
-            <col width="20%" />
-            <col width="80%" />
+            <col width="30%" />
+            <col width="70%" />
             <tr>
               <th>Time</th>
               <th>Event</th>
@@ -383,15 +290,15 @@
               <td>Technical Consultation</td>
             </tr>
           </table>
-  
+
           <div class="table-head">
-            <div style="height: 5%;"></div>
-            <h2>Day 4: 7 Jan 2021</h2>
+            <div style="height: 1vh;"></div>
+            <h3>Day 4: 7 Jan 2021</h3>
             <h3>Design Fair</h3>
           </div>
           <table>
-            <col width="20%" />
-            <col width="80%" />
+            <col width="30%" />
+            <col width="70%" />
             <tr>
               <th>Time</th>
               <th>Event</th>
@@ -421,63 +328,64 @@
     <div id="iee" class="tabcontent">
       <div class="block-4 block-4-gradient-iee" id="ieeschedule">
         <!--
-        <div class="container-default">
+          <div class="container-default">
           <div>
-            <h1>International Symposium on Engineering Education</h1>
-            <div style="height: 5%;"></div>
-            <h1>Symposium Schedule</h1>
+          <h1>International Symposium on Engineering Education</h1>
+          <div style="height: 5%;"></div>
+          <h1>Symposium Schedule</h1>
           </div>
-        </div>
+          </div>
         -->
-  
+
         <div class="rundown">
           <div class="table-head">
-          <!--
-            <div style="height: 5%;"></div>
-          -->
-            <h2>7 Jan 2021</h2>
+            <h3>7 Jan 2021</h3>
           </div>
           <table>
-            <col width="20%" />
-            <col width="80%" />
+            <col width="30%" />
+            <col width="70%" />
             <tr>
               <th>Time</th>
               <th>Event</th>
+            </tr>
+            <tr>
+              <td>0845</td>
+              <td>Registration Opens</td>
             </tr>
             <tr>
               <td>0900</td>
               <td>IEE Conference Opening Ceremony</td>
             </tr>
             <tr>
-              <td></td>
+              <td>0910</td>
               <td>Keynote Speech by <b>Prof. Karl Smith</b></td>
             </tr>
-			<tr>
-				<td>1000</td>
-				<td>HKUST Campus Drone Tour</td>
-			</tr>
             <tr>
-              <td>1030</td>
-              <td>Session A by <b>Prof. Ben CHAN</b></td>
+              <td>1000</td>
+              <td>Session A by <b>Prof. Gloria KIM</b></td>
             </tr>
             <tr>
-              <td>1100</td>
+              <td>1030</td>
               <td>Session B by <b>Prof. Chi Ying TSUI</b></td>
             </tr>
             <tr>
-              <td>1130</td>
-              <td>Session C by <b>Prof. Sang Hoon BAE</b></td>
+              <td>1100</td>
+              <td>HKUST Campus Drone Tour</td>
             </tr>
             <tr>
-              <td>1200</td>
-              <td>Session D by <b>Prof. Gloria KIM</b></td>
+              <td>1120</td>
+              <td>Session C by <b>Prof. Ben CHAN</b></td>
             </tr>
             <tr>
-              <td>1230</td>
+              <td>1150</td>
+              <td>Session D by <b>Prof. Sang Hoon BAE</b></td>
+            </tr>
+            <tr>
+              <td>1220</td>
               <td>Round Table Discussion</td>
             </tr>
           </table>
-          <p>Updated as of 19 Dec 2020</p>
+          <p>Updated as of 22 Dec 2020</p>
         </div>
       </div>
     </div>
@@ -486,25 +394,151 @@
       function openTab(evt, name) {
         // Declare all variables
         var i, tabcontent, tablinks;
-      
+
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
-      
+
         // Get all elements with class="tablinks" and remove the class "active"
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
           tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-      
+
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(name).style.display = "block";
         evt.currentTarget.className += " active";
       }
       //default open iplp
       document.getElementById("iplpbutton").click();
+    </script>
+
+    <div class="block-3 block-3-gradient" id="speakers">
+      <div>
+        <h1>Speakers</h1>
+      </div>
+      <div>
+        <div class="pic-row">
+          <div class="speaker-img speaker-img-active" id="s1">
+            <img src="img/KarlSmith.jpg" onclick="speaker1()"/>
+            <b>Prof. Karl SMITH</b>
+            <p>Keynote Speaker</p>
+            <div style="height: calc(5px + 0.75vmin);"></div>
+          </div>
+          <div class="speaker-img" id="s5">
+            <img src="img/GloriaKim3.jpg" onclick="speaker5()"/>
+            <b>Prof. Gloria KIM</b>
+            <p>Session A</p>
+            <div style="height: calc(5px + 0.75vmin);"></div>
+          </div>
+          <div class="speaker-img" id="s3">
+            <img src="img/ChiYingTsui.jpg" onclick="speaker3()"/>
+            <b>Prof. Chi Ying TSUI</b>
+            <p>Session B</p>
+            <div style="height: calc(5px + 0.75vmin);"></div>
+          </div>
+          <div class="speaker-img" id="s2">
+            <img src="img/BenChan.png" onclick="speaker2()"/>
+            <b>Prof. Ben CHAN</b>
+            <p>Session C</p>
+            <div style="height: calc(5px + 0.75vmin);"></div>
+          </div>
+          <div class="speaker-img" id="s4">
+            <img src="img/SangHoonBae.jpg" onclick="speaker4()"/>
+            <b>Prof. Sang Hoon BAE</b>
+            <p>Session D</p>
+            <div style="height: calc(5px + 0.75vmin);"></div>
+          </div>
+        </div>
+        <div style="height: 5vh;"></div>
+        <div class="bio">
+          <h3 id="speechTitle">Learning in the Time of Coronavirus</h3>
+          <h4>Abstract</h4>
+          <p id="abstract">Five major shifts in the past 100 years of engineering education were identified in the 2012 Centennial Special Issue of the Proceedings of the IEEE. They are summarized and lessons learned and implications for the current shift, the shift to remote instruction are described. This keynote focuses of what we have learned from previous shifts, especially Shift 5:  applying education, learning, and social-behavioral sciences research; and the implications for advancing learning during the pandemic. Three key areas are emphasized, (1) what we know about how people learn and (2) the importance of intentional course design, and (3) the importance of interactive learning. The speaker has been active in engineering education research since the early 1970s and played a major role in the development of the first engineering education PhD granting department. </p>
+          <div style="height:5vh;"></div>
+          <h4 id="bio-title" style="text-align: left;">About Prof. Karl SMITH</h4>
+          <p id="bio-text">Karl A. Smith is Cooperative Learning Professor of Engineering Education, School of Engineering Education, at Purdue University. He is also Emeritus Professor of Civil, Environmental, and Geo- Engineering, Morse-Alumni Distinguished University Teaching Professor, and Faculty Member, Technological Leadership Institute at the University of Minnesota. He has been at the University of Minnesota since 1972 and started his academic career as a materials processing engineering researcher. In 1991 he changed careers to focus on engineering education research and in 2006 he accepted a part time position as Cooperative Learning Professor, School of Engineering Education, Purdue University to help start the engineering education PhD program in the College of Engineering.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function activeIMG(num) {
+        switch(num){
+          case 1:
+            document.getElementById("s1").classList.add("speaker-img-active");
+            document.getElementById("s2").classList.remove("speaker-img-active");
+            document.getElementById("s3").classList.remove("speaker-img-active");
+            document.getElementById("s4").classList.remove("speaker-img-active");
+            document.getElementById("s5").classList.remove("speaker-img-active");
+            break;
+          case 2:
+            document.getElementById("s2").classList.add("speaker-img-active");
+            document.getElementById("s1").classList.remove("speaker-img-active");
+            document.getElementById("s3").classList.remove("speaker-img-active");
+            document.getElementById("s4").classList.remove("speaker-img-active");
+            document.getElementById("s5").classList.remove("speaker-img-active");
+            break;
+          case 3:
+            document.getElementById("s3").classList.add("speaker-img-active");
+            document.getElementById("s1").classList.remove("speaker-img-active");
+            document.getElementById("s2").classList.remove("speaker-img-active");
+            document.getElementById("s4").classList.remove("speaker-img-active");
+            document.getElementById("s5").classList.remove("speaker-img-active");
+            break;
+          case 4:
+            document.getElementById("s4").classList.add("speaker-img-active");
+            document.getElementById("s1").classList.remove("speaker-img-active");
+            document.getElementById("s2").classList.remove("speaker-img-active");
+            document.getElementById("s3").classList.remove("speaker-img-active");
+            document.getElementById("s5").classList.remove("speaker-img-active");
+            break;
+          case 5:
+            document.getElementById("s5").classList.add("speaker-img-active");
+            document.getElementById("s1").classList.remove("speaker-img-active");
+            document.getElementById("s2").classList.remove("speaker-img-active");
+            document.getElementById("s3").classList.remove("speaker-img-active");
+            document.getElementById("s4").classList.remove("speaker-img-active");
+            break;
+          default:
+        }
+      }
+      function speaker1(){
+        activeIMG(1);
+        document.getElementById("speechTitle").innerHTML="Learning in the Time of Coronavirus";
+        document.getElementById("abstract").innerHTML="Five major shifts in the past 100 years of engineering education were identified in the 2012 Centennial Special Issue of the Proceedings of the IEEE. They are summarized and lessons learned and implications for the current shift, the shift to remote instruction are described. This keynote focuses of what we have learned from previous shifts, especially Shift 5:  applying education, learning, and social-behavioral sciences research; and the implications for advancing learning during the pandemic. Three key areas are emphasized, (1) what we know about how people learn and (2) the importance of intentional course design, and (3) the importance of interactive learning. The speaker has been active in engineering education research since the early 1970s and played a major role in the development of the first engineering education PhD granting department. ";
+        document.getElementById("bio-title").innerHTML="About Prof. Karl SMITH";
+        document.getElementById("bio-text").innerHTML="Karl A. Smith is Cooperative Learning Professor of Engineering Education, School of Engineering Education, at Purdue University. He is also Emeritus Professor of Civil, Environmental, and Geo- Engineering, Morse-Alumni Distinguished University Teaching Professor, and Faculty Member, Technological Leadership Institute at the University of Minnesota. He has been at the University of Minnesota since 1972 and started his academic career as a materials processing engineering researcher. In 1991 he changed careers to focus on engineering education research and in 2006 he accepted a part time position as Cooperative Learning Professor, School of Engineering Education, Purdue University to help start the engineering education PhD program in the College of Engineering.";
+      }
+      function speaker2(){
+        activeIMG(2);
+        document.getElementById("speechTitle").innerHTML="Makers and Where to Find Them";
+        document.getElementById("abstract").innerHTML="";
+        document.getElementById("bio-title").innerHTML="About Prof. Ben CHAN";
+        document.getElementById("bio-text").innerHTML="Dr Ben, Y. B. Chan is currently an Associate Professor in Engineering Education and the Director of the University's Center for Engineering Education Innovation. Ben has worked extensively in Engineering Education related areas, including academic advising, experiential learning and teaching pedagogies development.  Ben has been the recipient of numerous teaching excellence awards during his almost decade-long teaching at the University, including the finalist of the QS Reimagine Education Award 2018 (Global) organized by Wharton School QS Reimagine Education Award Committee; School of Engineering Teaching Excellence Appreciation Award in 2016 & 2020; the Common Core Teaching Excellence Award 2016 - Honorary Mention, the Nomination for the 2017 & 2020 UGC Teaching Award, etc. He also accumulated over HK$20M education related grants as a PI and has over 50 journal and conference papers published.";
+      }
+      function speaker3(){
+        activeIMG(3);
+        document.getElementById("speechTitle").innerHTML="Integrative Systems and Design &ndash; a new approach to nurture next-generation technologists and innovators";
+        document.getElementById("abstract").innerHTML="";
+        document.getElementById("bio-title").innerHTML="About Prof. Chi Ying TSUI";
+        document.getElementById("bio-text").innerHTML="Chi-ying Tsui received his B.S. degree in Electrical Engineering from the University of Hong Kong and Ph.D. degree in Computer Engineering from the University of Southern California in 1994. He then joined the Department of Electrical and Electronic Engineering, Hong Kong University of Science and Technology and is currently a full Professor in the department. He was the Associate Dean of Engineering at HKUST from 2014 to 2018 and is now the founding Head and Professor of the Division of Integrative Systems and Design. He co-founded Perception Digital, which was a technology company focusing on designing embedded multimedia devices and was listed in the Hong Kong Stock Exchange in 2009. He also involved in a few start-up companies founded by UST alumni in the area of high-speed IC design, embedded health-care devices and implantable medical devices.<br> Dr. Tsui's research interests include designing integrated circuits and VLSI architectures for energy-efficient embedded machine learning, low power multimedia and wireless applications, developing power management circuits and techniques for embedded portable devices and ultra-low power systems for implantable devices. He has published more than 250 referred publications and holds 12 US patents on power management, VLSI and multimedia systems. He have been managing and involved in multiple large-scale research projects supported by government and industries in the area of IC design, AI hardware chips and wireless communication hardware design. He received the best paper awards from the IEEE Transactions on VLSI Systems in 1995, IEEE ISCAS in 1999, IEEE/ACM ISLPED in 2007, and IEEE DELTA in 2008, CODES in 2012. He also received the Design Awards in the IEEE ASP-DAC University Design Contest in 2004 and 2006. He is a senior member of IEEE.";
+      }
+      function speaker4(){
+        activeIMG(4);
+        document.getElementById("speechTitle").innerHTML="The Rise of Student Engagement and Success: A New Paradigm of Higher Education in Korea";
+        document.getElementById("abstract").innerHTML="In the past decade, Korea's higher education has experienced a huge paradigm shift owing to dramatic environmental changes. The new trend adopts student-oriented education, student engagement, and student success as major themes. These terms are widely used in the official reports and statements from higher education institutions and the government. The most frequently cited concept is &ldquo;student-oriented&rdquo; education. It is perceived as the vison which universities and colleges must pursue for their sustainable development. In other words, universities and colleges should work toward satisfying the needs of students, helping them fulfil their academic and career goals, and ultimately helping them grow up as better human being. In recent years, the term &ldquo;student engagement&rdquo; was introduced to actualize the theme of &ldquo;student-oriented&rdquo; which may be viewed solely as abstract and directional. While &ldquo;student-oriented&rdquo; suggests the ideal that institutions should strive for, &ldquo;student engagement&rdquo; involves the intervention strategies that are prescribed for developing systems and practices aimed at building student-oriented institutions. Finally, &ldquo;student success&rdquo; as a theme is surprisingly flourishing among Korean universities and colleges which have made it their fundamental mission to be accountable for the students' learning outcomes and success in future life. Moreover, student engagement is highlighted as an effective strategy to achieve student success.<br>Professor Bae presents a case of Sungkyunkwan University, which officially proposed student engagement and success as a vison of the institution. Currently the SKKU student success system is widely considered a successful and exemplary case of university innovation in Korea. He will present what SKKU has done to promote student engagement and succuss and share lessons from SKKU case.";
+        document.getElementById("bio-title").innerHTML="About Prof. Sang Hoon BAE";
+        document.getElementById("bio-text").innerHTML="Sang Hoon Bae is Professor at the Department of Education and Vice President for student affairs in the Sungkyunkwan University (SKKU). Before joining in the faculty, he served as Assistant Secretary to the President for Education in the Office of the President. Professor Bae also has sixteen-year experience in the Korean Ministry of Education. He has held positions in various parts of the Ministry, including Director in the International Cooperation Team and in the After-school Policy Planning Team. He completed both Ph. D. and MS degree in Workforce Education and Development (WFED) from the Pennsylvania State University (PSU) in 2006 and 2004, respectively and earned a BA in Ethics Education from the Seoul National University in Korea. His current research interests focus on education reform policy, student success in higher education, and human resources development (HRD) at the national level. His recent publications appear in many internationally recognized journals including Asia Pacific Education Review and Quality Assurance in Education.";
+      }
+      function speaker5(){
+        activeIMG(5);
+        document.getElementById("speechTitle").innerHTML="Long-term and Sustainable Engineering Education Reform";
+        document.getElementById("abstract").innerHTML="Discipline-based education research is an emerging field of scholarly enterprise that combines the expertise of scientists and engineers with the methods and theories that explain learning. Engineering Education has expanded beyond traditional engineering disciplines and has established itself as a discipline. In response to the national need for long-term and engineering education reform, a number of Departments of Engineering Education and degree programs in Engineering Education have been established. These programs and their graduates have become the pipeline for educating future engineering faculty and professionals interested in pursuing careers in K-12 teaching and administration. The Department of Engineering Education at the University of Florida (UF) was established in 2019. Herein, I present the vision and framework that formed the basis of the newest department in the Herbert Wertheim College of Engineering at UF. The academic programs, program coursework, and anticipated impact will be described as well.";
+        document.getElementById("bio-title").innerHTML="About Prof. Gloria KIM";
+        document.getElementById("bio-text").innerHTML="Dr. Gloria Kim received her B.S. degree in Chemistry from Seoul National University, M.S. degree in Biomedical Engineering from Johns Hopkins University, and Ph.D. degree in Biomedical Engineering from Georgia Institute of Technology. Her technical expertise is in biomaterials, molecular imaging and drug delivery. <br>As a faculty member at the University at Buffalo, Northwestern University, and University of Florida, she has taught and developed courses in circuits, biomechanics, biomaterials, bioinstrumentation, and nanotechnology. She is interested in how educational environments affect student learning; and social and ethical issues in STEM research and teaching. Her work includes creating opportunities for students to globalize their engineering degrees and mentoring students in teaching. In addition, Dr. Kim has mentored numerous student entrepreneurial teams to success.<br>Currently, she is the Associate Chair for Research of the Department of Engineering Education in the Herbert Wertheim College of Engineering at the University of Florida. She is a member of the American Society for Engineering Education (ASEE) and the Korean Society for Engineering Education (KSEE). Recently, she was elected to serve on the Executive Committee of the International Federation of Engineering Education Societies (IFEES).";
+      }
     </script>
 
 
@@ -542,16 +576,17 @@
           <table>
             <tr>
               <td>Email:</td>
-              <td>egjac@ust.hk</td>
+              <td><a href="mailto:egjac@ust.hk?subject=IPLP2021%20Enquiry">egjac@ust.hk</a></td>
             </tr>
           </table>
         </div>
+        <div style="height: 2vmin;"></div>
         <div class="contact">
           <h4>Ian Chong</h4>
           <table>
             <tr>
               <td>Email:</td>
-              <td>egian@ust.hk</td>
+              <td><a href="mailto:egian@ust.hk?subject=IPLP2021%20Enquiry">egian@ust.hk</a></td>
             </tr>
           </table>
         </div>
@@ -562,8 +597,8 @@
     <script>
       $(function(){
 
-              /*
-                //Set up sticky header
+        /*
+          //Set up sticky header
      var stickyHeader = $(".sticky-header");
      var stickyHeaderSpacer = $('.sticky-header-spacer');
      function refreshStickyHeader(){
@@ -584,19 +619,19 @@
      }
      refreshStickyHeader();
      $(window).on("scroll", refreshStickyHeader);
-                     */
+         */
 
 
-              //Set up menu nav
-              $('.nav-option').click(function(){
-                      var id = $(this).text().replace(/\s+/g, '').toLowerCase();
-                      var target = $('#' + id).scrollTop(0);
-                      $('html, body').animate({
-                              scrollTop: target.offset().top - 42
-                            }, 800);
-                    });
+        //Set up menu nav
+        $('.nav-option').click(function(){
+          var id = $(this).text().replace(/\s+/g, '').toLowerCase();
+          var target = $('#' + id).scrollTop(0);
+          $('html, body').animate({
+            scrollTop: target.offset().top - 42
+          }, 800);
+        });
 
-            });
+      });
     </script>
   </body>
 </html>
